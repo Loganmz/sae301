@@ -52,10 +52,11 @@ function afficher_formulaire_inscription() {
 
 
 
-function theme_enqueue_styles() {
-    wp_enqueue_style('style', get_stylesheet_uri());
-  }
-  add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
+function enqueue_styles() {
+    wp_enqueue_style('main-styles', get_template_directory_uri() . '/css/style.css'); // Remplace par le chemin de ton fichier CSS
+}
+add_action('wp_enqueue_scripts', 'enqueue_styles');
+
   
 
   function custom_user_login() {
@@ -102,3 +103,4 @@ function custom_menu_items($items, $args) {
     return $items;
 }
 add_filter('wp_nav_menu_items', 'custom_menu_items', 10, 2);
+

@@ -1,6 +1,350 @@
-.equipe-logo{
-    width: 51px;
-    height: 51px;
-    border-radius: 100%;
+/* Style global */
+body {
+    background-color: #0A0A0A; /* Fond noir */
+    color: #fff; /* Texte blanc */
+    font-family: 'Arial', sans-serif;
+    margin: 20px; /* Supprime les marges par défaut */
+}
+
+/* Header */
+
+
+header .site-logo {
+    display: inline-block;
+    font-size: 24px; /* Taille du logo */
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Espacement entre logo et menu */
+    align-items: center; /* Alignement vertical */
+}
+
+/* Menu Hamburger */
+.menu-toggle {
+    display: none; /* Masquer par défaut */
+    flex-direction: column; /* Alignement vertical */
+    cursor: pointer; /* Curseur de pointeur */
+}
+
+.menu-toggle div {
+    width: 25px; /* Largeur des barres */
+    height: 3px; /* Hauteur des barres */
+    background-color: #fff; /* Couleur des barres */
+    margin: 4px 0; /* Espacement entre les barres */
+}
+
+/* Section Hero */
+.hero-section {
     
+    position: relative;
+    height: 80vh; /* Hauteur de la section Hero */
+    background-size: cover; /* Couvre toute la section */
+    background-position: center; /* Centre l'image */
+    display: flex; /* Utilise flexbox pour centrer le contenu */
+    align-items: end; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
+    text-align: center; /* Centre le texte */
+    color: #fff; /* Texte blanc */
+    padding: 20px; /* Espacement intérieur */
+    mix-blend-mode: screen;
+}
+.hero-content {
+    display: flex; /* Utilise flexbox pour centrer le contenu */
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
+    text-align: center; /* Centre le texte */
+    flex-direction: column;
+    color: #fff; /* Texte blanc */
+    padding: 20px; /* Espacement intérieur */
+}
+
+.hero-content h1 {
+    font-size: 24px; /* Taille de police pour le titre */
+    margin-bottom: 20px; /* Espacement sous le titre */
+}
+
+.hero-content .btn {
+    background-color: #e63946; /* Couleur rouge pour le bouton */
+    color: #fff; /* Texte blanc */
+    padding: 15px 45px; /* Espacement intérieur */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    text-decoration: none; 
+    
+    transition: background-color 0.3s ease; /* Transition pour un effet de survol */
+}
+
+.hero-content .btn:hover {
+    background-color: #d62839; /* Couleur plus foncée au survol */
+}
+
+/* Section de Bienvenue, À Propos et Dernières Nouvelles */
+.welcome-section .about-section  {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #0A0A0A; /* Couleur de fond pour les sections */
+}
+.news-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #353535; /* Couleur de fond pour les sections */
+}
+
+h2 {
+    font-size: 36px; /* Taille des titres */
+    margin-bottom: 20px; /* Espacement sous les titres */
+}
+
+p {
+    font-size: 18px; /* Taille de la police pour le texte */
+    margin: 10px 0; /* Espacement autour des paragraphes */
+}
+
+/* Dernières Nouvelles */
+.news-items {
+    display: flex; /* Utilisation de flexbox */
+    flex-direction: column; /* Alignement vertical sur mobile */
+    gap: 20px; /* Espacement entre les articles */
+}
+
+.news-item {
+    background-color: #333; /* Fond pour chaque article */
+    padding: 15px;
+    border-radius: 5px;
+    transition: transform 0.2s; /* Transition pour l'animation */
+}
+
+.news-item:hover {
+    transform: scale(1.02); /* Agrandissement au survol */
+}
+
+.news-item h3 {
+    margin: 10px 0; /* Espacement autour des titres d'articles */
+    font-size: 24px; /* Taille de la police pour les titres d'articles */
+}
+
+/* Media Queries pour les écrans plus larges */
+@media (min-width: 768px) {
+    .hero-content h1 {
+        font-size: 40px; /* Taille de police pour écrans plus grands */
+    }
+
+    section {
+        padding: 60px 40px; /* Plus d'espacement sur les grands écrans */
+    }
+
+    .news-items {
+        flex-direction: row; /* Affichage en ligne sur les écrans plus larges */
+        flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+    }
+
+    .news-item {
+        flex: 1 1 calc(50% - 20px); /* 50% de la largeur, avec un espacement */
+    }
+
+    .mobile-menu-content{
+        display: none;
+    }
+}
+
+.site-header {
+    background-color: none;
+    padding: 22px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.logo img {
+    max-height: 35px;
+    z-index: 10;
+}
+
+.main-navigation .menu-items {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navigation .menu-items li a {
+    color: #FAFAFA;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.login-button .btn-login, 
+.login-button .btn-logout {
+    background-color: #FF0019;
+    color: #010A13;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .main-navigation {
+        display: none;
+        
+    }
+
+    .burger-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        background-color: #0A0A0A;
+        border-radius: 8px;
+    }
+
+    .burger-icon, .close-overlay {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .burger-icon span, .close-overlay span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #FAFAFA;
+    }
+
+    .close-overlay {
+        font-size: 30px;
+        cursor: pointer;
+        display: none;
+        color: #FAFAFA;
+    }
+
+    /* Overlay menu */
+    .mobile-menu-overlay {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 15%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0A0A0A;
+        z-index: 2;
+    }
+    .mobile-menu-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .mobile-menu-content .mobile-menu-items {
+        list-style: none;
+        padding: 10px;
+    }
+
+    .mobile-menu-content .mobile-menu-items li a {
+        color: #FAFAFA;
+        text-decoration: none;
+        font-size: 16px;
+        display: flex;
+        padding: 13px 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Active overlay with cross icon */
+    .burger-menu.active .burger-icon {
+        display: none;
+    }
+
+    .burger-menu.active .close-overlay {
+        display: block;
+    }
+
+    /* Show mobile menu when active */
+    .mobile-menu-overlay.active {
+        display: flex;
+    }
+}
+
+
+/* Footer Navigation */
+footer {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.footer-nav {
+    display: flex; /* Utilise flexbox */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne */
+    justify-content: center; /* Centre le contenu horizontalement */
+    margin-bottom: 20px; /* Espacement en bas */
+}
+
+.footer-nav ul {
+    list-style: none; /* Pas de puces */
+    padding: 0; /* Pas de padding */
+    margin: 0; /* Pas de marges */
+    display: flex; /* Utilise flexbox */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne */
+    justify-content: center; /* Centre le contenu */
+}
+
+.footer-nav ul li {
+    margin: 5px; /* Espacement entre les éléments */
+}
+
+.footer-nav ul li a {
+    color: #FAFAFA; /* Couleur des liens */
+    font-size: 16px; /* Taille de la police */
+    text-decoration: none; /* Pas de soulignement */
+    display: block; /* Affiche en bloc pour le padding */
+    padding: 10px 15px; /* Espacement autour des liens */
+    transition: color 0.3s; /* Transition pour les effets de survol */
+}
+
+.footer-nav ul li a:hover {
+    color: #FF0019; /* Couleur au survol */
+}
+
+.footer-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.footer-info p {
+    color: #FAFAFA; /* Couleur des liens */
+    font-size: 16px; /* Taille de la police */
+    text-decoration: none; /* Pas de soulignement */
+    display: block; /* Affiche en bloc pour le padding */
+    padding: 10px 15px; /* Espacement autour des liens */
+    transition: color 0.3s; /* Transition pour les effets de survol */
+}
+
+.social-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 20px;
+    gap: 10%;
 }
